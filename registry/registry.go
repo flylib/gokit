@@ -1,7 +1,5 @@
 package registry
 
-import "time"
-
 type IRegistry interface {
 	Connect(addr ...string) error
 	Close() error
@@ -15,7 +13,7 @@ type IRegistry interface {
 type App interface {
 	Group() string
 	Version() string
-	Timestamp() time.Duration
+	Timestamp() int64
 	Key() string  //key
 	Body() []byte //value
 	UnmarshalTo(v any) error
